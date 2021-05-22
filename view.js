@@ -1,4 +1,5 @@
-const {printTable} = require('console-table-printer')
+const {printTable} = require('console-table-printer');
+const prompt = require('prompt-sync')();
 
 function Table(LeftValue, LeftUnit, RightValue, RightUnit) {
     if (LeftValue==null){
@@ -27,4 +28,7 @@ function Table(LeftValue, LeftUnit, RightValue, RightUnit) {
     return Table1;
 };
 
-printTable(Table(1,2,3,4))
+
+module.exports = { 
+    Table
+}
