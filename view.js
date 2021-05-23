@@ -1,5 +1,6 @@
 const {printTable} = require('console-table-printer');
 const prompt = require('prompt-sync')();
+var inquirer = require('inquirer');
 
 function Table(LeftValue, LeftUnit, RightValue, RightUnit) {
     if (LeftValue==null){
@@ -29,6 +30,43 @@ function Table(LeftValue, LeftUnit, RightValue, RightUnit) {
 };
 
 
+function TempSource(){
+    inquirer.prompt([{
+    name: "Source",
+    type: "list",
+    message: "Left temperature is source? ",
+    choices: ["Yes","No"]
+    }])
+    .then(function(answer){
+        return answer;
+    })
+}
+ 
+function TempValue(){
+    inquirer.prompt([{
+    name: "Temperature",
+    message: "Temperature value to convert",
+    type: "input"}])
+    .then(function(answer){
+        return parseInt(answer);
+    })
+}
+
+
+function From(){
+    inquirer.prompt([{
+    name: "From",
+    type: "list",
+    message: "Left temperature is source? ",
+    choices: ["Celsius", "Fahreinheit", "Kelvin"]
+    }])
+    .then(function(answer){
+        return answer;
+    })
+}
 module.exports = { 
-    Table
+    Table,
+    TempSource,
+    TempValue,
+    From
 }

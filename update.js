@@ -1,87 +1,45 @@
 
-var inquirer = require('inquirer');
-
-
-function TempSource(){
-    inquirer.prompt([{
-    name: "Source",
-    type: "list",
-    message: "Left temperature is source? ",
-    choices: ["Yes","No"]
-    }])
-    .then(function(answer){
-        return answer;
-    })
-}
- 
-function TempValue(){
-    inquirer.prompt([{
-    name: "Temperature",
-    message: "Temperature value to convert",
-    type: "input"}])
-    .then(function(answer){
-        return answer;
-    })
+function CtoF(celsius){
+    var fahrenheit = celsius*(9/5) + 32
+    return fahrenheit
 }
 
-
-function From(){
-    inquirer.prompt([{
-    name: "From",
-    type: "list",
-    message: "Left temperature is source? ",
-    choices: ["Celsius", "Fahreinheit", "Kelvin"]
-    }])
-    .then(function(answer){
-        return answer;
-    })
+function CtoK(celsius){
+    var Kelvin = celsius + 273.15
+    return Kelvin
 }
 
+function FtoK(fahreinheit){
+    var Kelvin = (fahreinheit - 32)*(5/9) +273.15
+    return Kelvin
+}
 
-TempSource()
-TempValue()
-From()
+function FtoC(fahreinheit){
+    var celsius = (fahreinheit - 32) * (5/9) 
+    return celsius
+}
 
+function KtoC(kelvin){
+    var celsius = (kelvin - 273.15)
+    return celsius
+}
+
+function KtoF(kelvin){
+    var fahreinheit = (kelvin -273.15)*(9/5) + 32
+    return fahreinheit
+}
+//console.log(CtoF(0))
+//console.log(CtoK(-273.15))
+//console.log(FtoK(145))
+//console.log(KtoC(400))
+//console.log(FtoC(0))
+//console.log(KtoF(254))
 
 module.exports = {
-    TempSource,
-    TempValue,
-    From
+    CtoF,
+    CtoK,
+    FtoK,
+    FtoC,
+    KtoC,
+    KtoF
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*function TempValue(model){
-    const {input} = model
-    const message = 'Temperature value to convert?'
-    return inquirer.prompt({
-        name: 'input',
-        type: 'list',
-        message: message,
-        default: input,     
-    })
-}
-
-function TempSource(model){
-    const {input} = model
-    const message = 'Left temperature is source?'
-    const choices = ['Yes', 'No']
-    return inquirer.prompt({
-        name: 'input',
-        type: 'list',
-        message: message,
-        default: input,
-        choices: choices       
-    })
-}
-
-*/
