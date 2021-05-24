@@ -1,4 +1,4 @@
-function PrintTemperatureSource(){
+/*function PrintTemperatureSource(){
     return "Left temperature is source? (y/n)  "
 }
 
@@ -19,4 +19,4 @@ module.exports ={
     PrintTemperature,
     PrintFrom,
     PrintTo
-}
+}*/

@@ -1,4 +1,5 @@
 
+
 function CtoF(celsius){
     var fahrenheit = parseFloat(celsius*(9/5) + 32)
     return fahrenheit
@@ -30,11 +31,12 @@ function KtoF(kelvin){
 }
 
 
+
 module.exports = {
     CtoF,
     CtoK,
     FtoK,
     FtoC,
     KtoC,
-    KtoF
+    KtoF,
 }

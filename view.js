@@ -5,6 +5,22 @@ const chalk = require('chalk');
 const figlet = require('figlet');
 const {CtoF, CtoK, FtoK, FtoC, KtoC, KtoF} = require('./update')
 
+function PrintTemperatureSource(){
+    return "Left temperature is source? (y/n)  "
+}
+
+function PrintTemperature(){
+    return "Enter the temperature to convert:  "
+}
+
+function PrintFrom(){
+    return "Choose the temperature to convert from (c,f,k)  "
+}
+
+function PrintTo(){
+    return "Choose the temperature value to convert to (c,f,k)  "
+}
+
 
 
 function Table2(TemperatureSource, Temperature, From, To) {
@@ -59,9 +75,10 @@ function Table(TemperatureSource, Temperature, From, To) {
         else{
             var L1 = Temperature
             var L2 = "Kelvin"
-            var R1 = KtoF(Temperature)}
+            var R1 = KtoF(Temperature)
             var R2 = "Fahreinheit"
-    }
+        }
+        }
     else{
         if(From=="c" && To=="f"){
             var R1 = Temperature
@@ -97,8 +114,10 @@ function Table(TemperatureSource, Temperature, From, To) {
             var R1 = Temperature
             var R2 = "Kelvin"
             var L1 = KtoF(Temperature)
-            var L2 = "Fahreinheit"}
+            var L2 = "Fahreinheit"
         }
+        }
+    
     var Table1 = [
     {"LeftValue": L1, "LeftUnit": L2, 
     "RightValue": R1, "RightUnit": R2}]
@@ -123,6 +142,10 @@ function getTitle(){
 module.exports = { 
     Table,
     Table2,
-    getTitle
+    getTitle,
+    PrintTemperatureSource,
+    PrintTemperature,
+    PrintFrom,
+    PrintTo,
     
 }
