@@ -1,6 +1,8 @@
 const {printTable} = require('console-table-printer');
 const prompt = require('prompt-sync')();
 var inquirer = require('inquirer');
+const chalk = require('chalk');
+const figlet = require('figlet');
 
 function Table(LeftValue, LeftUnit, RightValue, RightUnit) {
     if (LeftValue==null){
@@ -64,9 +66,27 @@ function From(){
         return answer;
     })
 }
+
+
+
+function getTitle(){
+    return chalk.blue(
+        figlet.textSync(
+            'Unit Converter',
+            {
+                horizontalLayout: 'half',
+                font: 'ogre'
+            }
+        )
+    )
+}
+
+
+
 module.exports = { 
     Table,
     TempSource,
     TempValue,
-    From
+    From,
+    getTitle
 }
