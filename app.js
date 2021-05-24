@@ -1,6 +1,6 @@
 const {printTable} = require('console-table-printer');
 const inquirer = require('inquirer');
-const {Table, TempSource, TempValue, From, getTitle} = require('./view');
+const {Table, Table2, getTitle} = require('./view');
 const {CtoF, CtoK, FtoK, FtoC, KtoC, KtoF} = require('./update')
 const {input} = require('./test')
 const prompt = require('prompt-sync')();
@@ -12,9 +12,9 @@ PrintFrom, PrintTo} = require('./test2')
 function app(){
     console.clear()
     console.log(getTitle(getTitle))
-    printTable(Table());
+    printTable(Table2());
     i=0
-    while (i<1){
+    while (i<3){
         var TemperatureSource = prompt(PrintTemperatureSource())
         var Temperature = prompt(PrintTemperature())
         var From = prompt(PrintFrom())
