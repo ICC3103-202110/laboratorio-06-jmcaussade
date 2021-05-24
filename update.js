@@ -26,7 +26,7 @@ function KtoC(kelvin){
 }
 
 function KtoF(kelvin){
-    var fahreinheit = (kelvin -273.15)*(9/5) + 32
+    var fahreinheit = parseFloat((kelvin -273.15)*(9/5) + 32)
     return fahreinheit
 }
 
