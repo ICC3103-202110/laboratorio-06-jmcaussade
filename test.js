@@ -30,6 +30,11 @@ function input(){
       }
 
   ])
+
+  /*
+  .then(answers=>{
+    console.log(answers)
+  })*/
   /*
   .then(answers=>{
       const Source = answers.Source;
