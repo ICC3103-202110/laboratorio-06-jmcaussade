@@ -12,8 +12,7 @@ function app(){
     console.clear()
     console.log(getTitle(getTitle))
     printTable(Table2());
-    i=0
-    while (i<3){
+    while (true){
         var TemperatureSource =  prompt(PrintTemperatureSource())
         var Temperature = prompt(PrintTemperature())
         var From = prompt(PrintFrom())
@@ -21,7 +20,6 @@ function app(){
        console.clear()
        printTable(Table(TemperatureSource, Temperature, From, To));
        console.log(getTitle(getTitle))
-       i++
     }
 
 }
